@@ -92,7 +92,7 @@ class TireSale(models.Model):
 @python_2_unicode_compatible
 class AccountReceivable(models.Model):
 	due_date = models.DateField(default=datetime.today()+timedelta(days=30))
-	customer = models.ForeignKey(Customer)
+	customer = models.ForeignKey(Customer,unique=True)
 	notes = models.CharField(max_length=256,blank=True)
 	current_balance = models.DecimalField(max_digits=7,decimal_places=2)
 	

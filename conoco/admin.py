@@ -56,14 +56,14 @@ class TireInventoryAdmin(admin.ModelAdmin):
 		    return self.readonly_fields + ('size','brand','supplier_code')
 		return self.readonly_fields
 
-	# def has_delete_permission(self, request, obj=None):
-	# 	return False
+	def has_delete_permission(self, request, obj=None):
+		return False
 
-	# def get_actions(self, request):
-	# 	actions = super(TireInventoryAdmin, self).get_actions(request)
-	# 	if 'delete_selected' in actions:
-	# 		del actions['delete_selected']
-	# 	return actions
+	def get_actions(self, request):
+		actions = super(TireInventoryAdmin, self).get_actions(request)
+		if 'delete_selected' in actions:
+			del actions['delete_selected']
+		return actions
 
 
 @admin.register(Customer)
@@ -78,14 +78,14 @@ class CustomerAdmin(admin.ModelAdmin):
 		    return self.readonly_fields + ('first_name','middle_name','last_name')
 		return self.readonly_fields
 
-	# def has_delete_permission(self, request, obj=None):
-	# 	return False
+	def has_delete_permission(self, request, obj=None):
+		return False
 
-	# def get_actions(self, request):
-	# 	actions = super(CustomerAdmin, self).get_actions(request)
-	# 	if 'delete_selected' in actions:
-	# 		del actions['delete_selected']
-	# 	return actions
+	def get_actions(self, request):
+		actions = super(CustomerAdmin, self).get_actions(request)
+		if 'delete_selected' in actions:
+			del actions['delete_selected']
+		return actions
 
 
 @admin.register(TireSale)
@@ -122,14 +122,14 @@ class AccountReceivableAdmin(admin.ModelAdmin):
 		    return self.readonly_fields + ('customer','current_balance')
 		return self.readonly_fields
 
-	# def has_delete_permission(self, request, obj=None):
-	# 	return False
+	def has_delete_permission(self, request, obj=None):
+		return False
 
-	# def get_actions(self, request):
-	# 	actions = super(AccountReceivableAdmin, self).get_actions(request)
-	# 	if 'delete_selected' in actions:
-	# 		del actions['delete_selected']
-	# 	return actions
+	def get_actions(self, request):
+		actions = super(AccountReceivableAdmin, self).get_actions(request)
+		if 'delete_selected' in actions:
+			del actions['delete_selected']
+		return actions
     
 
 @admin.register(Charge)
